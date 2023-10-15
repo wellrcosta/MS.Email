@@ -28,7 +28,7 @@ public class EmailController {
         return new ResponseEntity<>(emailModel, HttpStatus.CREATED);
     }
 
-    @GetMapping("/report/{status}")
+    @GetMapping("/info/{status}")
     public ResponseEntity<Iterable<EmailModel>> getEmails(@PathVariable StatusEmail status) {
         Iterable<EmailModel> emails = emailRepository.findAllByStatusEmail(status);
         return new ResponseEntity<>(emails, HttpStatus.OK);
