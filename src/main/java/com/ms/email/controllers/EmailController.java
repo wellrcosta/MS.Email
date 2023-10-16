@@ -25,12 +25,12 @@ public class EmailController {
         EmailModel emailModel = new EmailModel();
         BeanUtils.copyProperties(emailDto, emailModel);
         emailService.sendEmail(emailModel);
-        return new ResponseEntity<>(emailModel, HttpStatus.CREATED);
+        return ResponseEntity.created(null).body(emailModel);
     }
 
     @GetMapping("/info/{status}")
     public ResponseEntity<Iterable<EmailModel>> getEmails(@PathVariable StatusEmail status) {
         Iterable<EmailModel> emails = emailRepository.findAllByStatusEmail(status);
-        return new ResponseEntity<>(emails, HttpStatus.OK);
+        return ResponseEntity.ok(emails);
     }
 }
