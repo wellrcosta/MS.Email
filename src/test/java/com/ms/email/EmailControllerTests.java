@@ -23,7 +23,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class EmailControllerTest {
+public class EmailControllerTests {
 
     @Autowired
     private MockMvc mockMvc;
