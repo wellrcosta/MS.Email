@@ -23,8 +23,11 @@ import java.time.LocalDateTime;
 @RestController
 @RequestMapping("/report")
 public class ReportController {
-    @Autowired
-    private IEmailRepository emailRepository;
+    private final IEmailRepository emailRepository;
+
+    public ReportController(IEmailRepository emailRepository) {
+        this.emailRepository = emailRepository;
+    }
 
     @GetMapping("/search")
     public ResponseEntity<byte[]> searchEmails (

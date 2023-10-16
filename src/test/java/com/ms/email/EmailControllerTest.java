@@ -1,11 +1,9 @@
 package com.ms.email;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ms.email.controllers.EmailController;
 import com.ms.email.dtos.EmailDto;
 import com.ms.email.enums.StatusEmail;
 import com.ms.email.models.EmailModel;
-import com.ms.email.repositories.IEmailRepository;
 import com.ms.email.services.EmailService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

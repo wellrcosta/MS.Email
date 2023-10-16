@@ -14,11 +14,16 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class EmailController {
-    @Autowired
+    final
     EmailService emailService;
 
-    @Autowired
+    final
     IEmailRepository emailRepository;
+
+    public EmailController(EmailService emailService, IEmailRepository emailRepository) {
+        this.emailService = emailService;
+        this.emailRepository = emailRepository;
+    }
 
     @PostMapping("/send-single")
     public ResponseEntity<EmailModel> sendingEmail(@RequestBody @Valid EmailDto emailDto) {
